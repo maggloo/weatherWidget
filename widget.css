@@ -1,0 +1,156 @@
+body {
+            margin: 0px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .widget {
+            display: flex;
+            flex-direction: column;                 
+            width: 260px;            
+        }
+        #wrapper {
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(180, 216, 247);
+            padding: 20px;    
+            border-radius: 15px;
+            height: 110px;
+            font-family: Georgia;
+            font-size: 18px;
+            position: relative;  
+            animation: openWidget 0.5s ease-in-out;    
+        }
+        #close-button {
+            position: absolute;       
+            top: 3%;
+            right: 4%;
+            width: 30px;
+            height: 30px;
+            border: none;
+            background-color: rgb(180, 216, 247);
+            cursor: pointer;
+            color: rgb(72, 132, 185);
+            font-size: 20px;
+        }
+        #get-forecast {
+            position: absolute;
+            font-family: Georgia;
+            bottom: 2%;
+            right: 5%;
+            width: fit-content;
+            height: max-content;
+            border: none;
+            background-color: rgb(180, 216, 247);
+            cursor: pointer;
+            color: rgb(72, 132, 185);
+            border-radius: 15px;
+            font-size: 15px;     
+        }
+        
+        .closed-widget {
+            padding: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;            
+            background: url(https://cdn-icons-png.flaticon.com/512/1163/1163661.png);
+            background-color: rgb(228, 240, 250);
+            background-size: 50px 50px;
+            background-repeat: no-repeat;
+            background-origin: content-box;     
+            animation: closeWidget 0.5s ease-in-out 1;
+            position: relative;    
+        }
+
+        @keyframes closeWidget {
+            from {
+                width: 300px;
+                height: 150px; 
+                background: none;
+                border-radius: 15px;
+                background-color: rgb(180, 216, 247);
+                background-size: 100px 100px;
+                opacity: 0%;   
+            }
+            50% {
+                opacity: 40%;  
+            }
+            to {
+                width: 50px;
+                height: 50px;
+                background-color: rgb(228, 240, 250);
+                background-size: 50px 50px;
+                background-repeat: no-repeat;
+                background-origin: content-box;  
+                opacity: 100%;           
+            }
+        }
+
+        @keyframes openWidget {
+            from {
+                height: 50px;
+                background-color: rgb(228, 240, 250);
+                background-size: 50px 50px;
+                background-repeat: no-repeat;
+                background-origin: content-box; 
+                opacity: 0%; 
+            }
+            50% {
+                opacity: 30%; 
+            }
+            to {
+                padding: 20px;
+                height: 115px; 
+                background-color: rgb(180, 216, 247);      
+            }
+        }
+
+        #forecast-wrapper {
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;    
+        }
+
+        .today, .tommorow, .day-after-tommorow {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgb(223, 240, 253);
+            border-radius: 15px;
+            font-family: Georgia;
+/*             width: 80%; */
+            font-size: 13px;
+            transition: all 0.5s; 
+            overflow: hidden;
+            opacity: 0%;
+        }
+
+        #open-button {
+            display: none;
+            position: absolute;
+            border: none;
+            border-radius: 15px;
+            background-color: rgb(228, 240, 250);
+            cursor: pointer;
+            width: 30px;
+            height: 20px;
+            left: 30px;
+            bottom: 0px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .svg {
+            fill:none;
+            stroke:#1237a5;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+        }
+        #spinner {
+            display: none;
+            width: 110px;
+            height: 110px;
+            align-self: center;
+        }
+
